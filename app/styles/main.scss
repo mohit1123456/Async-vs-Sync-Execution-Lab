@@ -1,0 +1,528 @@
+// app/styles/main.scss
+// ─────────────────────────────────────────────────────────────────────────────
+// Async vs Sync Lab — Custom Styles
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Design Tokens ────────────────────────────────────────────────────────────
+$color-danger: #ef4444;
+$color-warning: #f59e0b;
+$color-success: #10b981;
+$color-info: #3b82f6;
+$color-purple: #7c3aed;
+$color-orange: #f97316;
+$color-bg-dark: #1a1a2e;
+$color-bg-card: #16213e;
+$color-bg-card-hover: #0f3460;
+$color-border: rgba(255, 255, 255, 0.08);
+$color-text: #e2e8f0;
+$color-muted: #94a3b8;
+
+$radius-card: 12px;
+$radius-btn: 8px;
+$shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+$transition: 0.2s ease;
+
+// ── App Title ────────────────────────────────────────────────────────────────
+.app-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__icon {
+        font-size: 1.5rem;
+    }
+
+    &__text {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-text;
+        letter-spacing: -0.02em;
+    }
+
+    &__badge {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: $color-purple;
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 20px;
+        margin-left: 4px;
+    }
+}
+
+// ── Lab Container ─────────────────────────────────────────────────────────────
+.lab-container {
+    padding: 1.5rem 2rem;
+    max-width: 1400px;
+}
+
+.lab-header {
+    margin-bottom: 1.5rem;
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, $color-purple, $color-info);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+    }
+
+    &__desc {
+        color: $color-muted;
+        font-size: 0.95rem;
+        max-width: 800px;
+        line-height: 1.7;
+    }
+}
+
+.lab-divider {
+    border-color: $color-border;
+    margin: 1.5rem 0;
+}
+
+// ── Section Titles ────────────────────────────────────────────────────────────
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-text;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+// ── Method Cards Grid ─────────────────────────────────────────────────────────
+.methods-section {
+    margin-bottom: 2rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    &--single {
+        grid-template-columns: 1fr;
+    }
+}
+
+// ── Method Card ───────────────────────────────────────────────────────────────
+.method-card {
+    background: $color-bg-card;
+    border: 1px solid $color-border;
+    border-radius: $radius-card;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    transition: transform $transition, box-shadow $transition;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        border-bottom: 1px solid $color-border;
+
+        &--danger {
+            background: rgba($color-danger, 0.15);
+            border-left: 4px solid $color-danger;
+        }
+
+        &--success {
+            background: rgba($color-success, 0.15);
+            border-left: 4px solid $color-success;
+        }
+
+        &--info {
+            background: rgba($color-info, 0.15);
+            border-left: 4px solid $color-info;
+        }
+
+        &--purple {
+            background: rgba($color-purple, 0.15);
+            border-left: 4px solid $color-purple;
+        }
+
+        &--orange {
+            background: rgba($color-orange, 0.15);
+            border-left: 4px solid $color-orange;
+        }
+
+        &--extended {
+            background: rgba($color-success, 0.1);
+            border-left: 4px solid $color-success;
+        }
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-text;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 0.72rem;
+        color: $color-muted;
+        margin: 0;
+        letter-spacing: 0.02em;
+    }
+
+    &__body {
+        padding: 16px 18px;
+
+        hr {
+            border-color: $color-border;
+            margin: 12px 0;
+        }
+    }
+
+    &__warning {
+        background: rgba($color-danger, 0.1);
+        border: 1px solid rgba($color-danger, 0.3);
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        color: #fca5a5;
+        margin-bottom: 12px;
+    }
+
+    &__info {
+        background: rgba($color-info, 0.1);
+        border: 1px solid rgba($color-info, 0.3);
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        color: #93c5fd;
+        margin-bottom: 12px;
+    }
+
+    &__how {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        color: $color-muted;
+        margin-bottom: 14px;
+        font-family: 'SFMono-Regular', Consolas, monospace;
+
+        code {
+            color: #c4b5fd;
+            font-size: 0.78rem;
+        }
+    }
+
+    &__install {
+        pre.code-block {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.8rem;
+            color: #86efac;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+    }
+}
+
+// ── Run Buttons ───────────────────────────────────────────────────────────────
+.btn-run {
+    width: 100%;
+    border: none;
+    border-radius: $radius-btn;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all $transition;
+    letter-spacing: 0.01em;
+
+    &--danger {
+        background: $color-danger;
+        color: #fff;
+
+        &:hover {
+            background: darken($color-danger, 8%);
+            transform: scale(1.02);
+        }
+    }
+
+    &--warning {
+        background: $color-warning;
+        color: #1a1a1a;
+
+        &:hover {
+            background: darken($color-warning, 8%);
+            transform: scale(1.02);
+        }
+    }
+
+    &--info {
+        background: $color-info;
+        color: #fff;
+
+        &:hover {
+            background: darken($color-info, 8%);
+            transform: scale(1.02);
+        }
+    }
+
+    &--purple {
+        background: $color-purple;
+        color: #fff;
+
+        &:hover {
+            background: darken($color-purple, 8%);
+            transform: scale(1.02);
+        }
+    }
+
+    &--orange {
+        background: $color-orange;
+        color: #fff;
+
+        &:hover {
+            background: darken($color-orange, 8%);
+            transform: scale(1.02);
+        }
+    }
+}
+
+// ── Tester Panel ──────────────────────────────────────────────────────────────
+.tester-panel {
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba($color-purple, 0.3);
+    border-radius: $radius-card;
+    overflow: hidden;
+
+    &__header {
+        background: rgba($color-purple, 0.15);
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba($color-purple, 0.2);
+
+        h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: $color-text;
+        }
+    }
+
+    &__body {
+        padding: 14px 16px;
+    }
+
+    &__desc {
+        font-size: 0.8rem;
+        color: $color-muted;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    &__counter {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $color-purple;
+        background: rgba($color-purple, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+        letter-spacing: 0.02em;
+    }
+
+    &__legend {
+        margin-top: 12px;
+    }
+}
+
+.btn-click-test {
+    background: linear-gradient(135deg, $color-purple, $color-info) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: $radius-btn !important;
+    font-weight: 700 !important;
+    transition: all $transition !important;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.02) !important;
+    }
+}
+
+// ── Legend ────────────────────────────────────────────────────────────────────
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: $color-muted;
+    margin-bottom: 5px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &--danger {
+        background: $color-danger;
+    }
+
+    &--warning {
+        background: $color-warning;
+    }
+
+    &--info {
+        background: $color-info;
+    }
+
+    &--purple {
+        background: $color-purple;
+    }
+
+    &--orange {
+        background: $color-orange;
+    }
+}
+
+// ── Reference Section ─────────────────────────────────────────────────────────
+.reference-section {
+    margin-top: 1rem;
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.ref-card {
+    background: $color-bg-card;
+    border: 1px solid $color-border;
+    border-radius: $radius-card;
+    padding: 16px;
+    box-shadow: $shadow-card;
+
+    &__title {
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        color: $color-text;
+    }
+
+    ul {
+        padding-left: 18px;
+        margin: 0;
+
+        li {
+            font-size: 0.78rem;
+            color: $color-muted;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+    }
+
+    code {
+        color: #c4b5fd;
+        font-size: 0.75rem;
+        background: rgba(255, 255, 255, 0.06);
+        padding: 1px 4px;
+        border-radius: 3px;
+    }
+}
+
+// ── Verbatim Output ───────────────────────────────────────────────────────────
+.shiny-text-output {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid $color-border !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-size: 0.82rem !important;
+    color: #86efac !important;
+    font-family: 'SFMono-Regular', Consolas, monospace !important;
+    white-space: pre-wrap !important;
+    min-height: 36px;
+}
+
+// ── Tables ────────────────────────────────────────────────────────────────────
+.shiny-html-output table,
+.shiny-table-output table {
+    font-size: 0.8rem !important;
+    color: $color-text !important;
+    width: 100% !important;
+    border-collapse: collapse;
+
+    th {
+        background: rgba($color-purple, 0.2) !important;
+        color: #c4b5fd !important;
+        font-weight: 600;
+        padding: 6px 10px;
+        border-bottom: 1px solid rgba($color-purple, 0.3);
+    }
+
+    td {
+        padding: 5px 10px;
+        border-bottom: 1px solid $color-border;
+    }
+
+    tr:hover td {
+        background: rgba(255, 255, 255, 0.03);
+    }
+}
+
+// ── Code Blocks ───────────────────────────────────────────────────────────────
+pre.code-block,
+pre.shiny-text-output {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 8px;
+    padding: 14px !important;
+    font-size: 0.8rem !important;
+    color: #86efac !important;
+    border: 1px solid rgba(16, 185, 129, 0.2) !important;
+    white-space: pre-wrap;
+}
+
+// ── Slider Styling ────────────────────────────────────────────────────────────
+.irs--shiny .irs-bar {
+    background: $color-purple !important;
+}
+
+.irs--shiny .irs-handle {
+    background: $color-purple !important;
+    border-color: $color-purple !important;
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reference-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .reference-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-container {
+        padding: 1rem;
+    }
+}
